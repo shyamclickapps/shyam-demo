@@ -2,20 +2,22 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   skip_before_action :authenticate
 
-  api :POST, '/v1/user/register', "Create new user"
-  param :username, String, :desc => "Username for login", :required => true
-  param :firstname, String, :desc => "firstname", :required => true
-  param :lastname, String, :desc => "lastname", :required => false
-  param :email, String, :desc => "Email for login", :required => true
-  param :password, String, :desc => "Password for login", :required => true
-  param :password_confirmation, String, :desc => "Confirm Password for login", :required => true
+  # api :POST, '/v1/user/register', "Create new user"
+  # param :username, String, :desc => "Username for login", :required => true
+  # param :firstname, String, :desc => "firstname", :required => true
+  # param :lastname, String, :desc => "lastname", :required => false
+  # param :email, String, :desc => "Email for login", :required => true
+  # param :password, String, :desc => "Password for login", :required => true
+  # param :password_confirmation, String, :desc => "Confirm Password for login", :required => true
   # param :lang_code, ["en","ar"], :desc => "Select language", :required => true
 
   def register
 
+
     begin
       # Sanitize POST data
       # username = params[:username]
+
       username = $FullSanitizer.sanitize(params[:username]).downcase
       # Strong Parameters
       parameters = ActionController::Parameters.new(:email => params[:email],

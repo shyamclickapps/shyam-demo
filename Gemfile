@@ -27,20 +27,20 @@ gem 'active_model_serializers'
 gem 'paperclip'
 gem 'elasticsearch-rails'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+#To use Jbuilder templates for JSON
+#gem 'jbuilder'
 
-# Use unicorn as the app server
-#gem 'unicorn'
-#gem 'elasticsearch-model'
-# gem 'executables'
+#Use unicorn as the app server
+gem 'unicorn'
+gem 'elasticsearch-model'
+#gem 'executables'
 
-# # Deploy with Capistrano
-# gem 'capistrano', :group => :development
-# gem 'rspec'
-# gem 'annotate'
-# gem 'resque'
-# gem 'resque-web', require: 'resque_web'
+# Deploy with Capistrano
+#gem 'capistrano', :group => :development
+gem 'rspec'
+gem 'annotate'
+gem 'resque'
+gem 'resque-web', require: 'resque_web'
 
 
 group :development do
