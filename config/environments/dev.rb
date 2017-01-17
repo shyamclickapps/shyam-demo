@@ -36,14 +36,12 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
   config.logger = Logger.new(config.paths["log"].first, 1, 5242880) # 5 megabytes
-  # Setting for contructing URLs for links sent in action_mailer emails
-  # Mostly required in Devise, but also be used for other emails too.
-  config.action_mailer.default_url_options = { host: 'dev.shyamdemo.clicksandbox.com'}
 
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    api_key: "key-cbd2ecccc609c07df0acc843e0d6b3b1",
-    domain:  "sandbox0cc0b47dcc2f48778278c08291fb5f79.mailgun.org"
-  }
+  # Raises error for missing translations
+  # config.action_view.raise_on_missing_translations = true
+  config.action_controller.asset_host = 'dev.shyamdemo.clicksandbox.com'
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3001 }
 
 end
